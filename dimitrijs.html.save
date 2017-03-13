@@ -1,0 +1,52 @@
+z  GNU nano 2.2.6                        File: dectobin.html                                                        
+
+
+
+<HEAD>
+
+<script>
+
+var num1;
+
+var num2;
+
+var currnum;
+
+
+
+function convert()
+
+{
+
+currnum = 128;
+
+if(document.binaryform.select1.value == "b2d")
+
+        {
+
+        num1 = document.binaryform.text1.value;
+
+        num2 = eval(num1.charAt(0)) * currnum;
+
+
+
+        for (i = 1; i <= 7; i++)
+
+                {
+
+                currnum = currnum / 2;
+
+                num2 = num2 + (eval(num1.charAt(i)) * currnum);
+
+                }
+
+
+
+
+
+        document.binaryform.text2.value = num2;
+
+        }
+
+        else
+

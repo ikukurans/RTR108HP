@@ -1,0 +1,206 @@
+
+
+<HEAD>
+
+<script>
+
+var num1;
+
+var num2;
+
+var currnum;
+
+
+
+function convert()
+
+{
+
+currnum = 128;
+
+if(document.binaryform.select1.value == "b2d")
+
+	{
+
+	num1 = document.binaryform.text1.value;
+
+	num2 = eval(num1.charAt(0)) * currnum;
+
+
+
+	for (i = 1; i <= 7; i++)
+
+		{
+
+		currnum = currnum / 2;
+
+		num2 = num2 + (eval(num1.charAt(i)) * currnum);
+
+		}
+
+	
+
+
+
+	document.binaryform.text2.value = num2;
+
+	}
+
+	else
+
+	if(document.binaryform.select1.value == "d2b")
+
+		{
+
+		num1 = eval(document.binaryform.text1.value);
+
+		if(num1 >= currnum)
+
+			{
+
+			num2 = "1";
+
+			num1 = num1 - currnum;
+
+			currnum = currnum / 2;
+
+			}
+
+			else
+
+			{
+
+			num2 = "0";
+
+			currnum = currnum / 2;
+
+			}
+
+		
+
+		for (p = 1; p <= 7; p++)
+
+			{
+
+			if(num1 >= currnum)
+
+				{
+
+				num2 = num2 + "1";
+
+				num1 = num1 - currnum;
+
+				currnum = currnum / 2;
+
+				}
+
+				else
+
+				{
+
+				num2 = num2 + "0";
+
+				currnum = currnum / 2;
+
+				}
+
+			}
+
+		document.binaryform.text2.value = num2;
+
+		}
+
+
+
+}
+
+
+
+</script>
+
+
+
+</HEAD>
+
+<BODY>
+<center>
+
+<table  width="100%" border="5">
+
+
+
+<form name="binaryform">
+
+
+
+<tr>
+
+<td align="center">
+
+<b>Iekshaa</b><br>
+
+<input type="text" name="text1">
+
+</td>
+
+<td align="center">
+
+<b>Aaraa</b><br>
+
+<input type="text" name="text2">
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td colspan="3" align="center">
+
+<input type="button" name="butt1" value="Mainiit" onclick="convert()">
+
+<td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td colspan="2" align="center">
+
+
+
+<select name="select1">
+
+<option value="b2d">Binar uz Decimal
+
+<option value="d2b">Decimal uz Binar
+
+</select>
+
+
+
+</td>
+
+
+
+</tr>
+
+</form>
+
+
+
+</table>
+
+
+
+
